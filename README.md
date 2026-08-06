@@ -318,9 +318,9 @@ They're designed to stay out of your way:
 - **Light on resources** — SpookiUI sets `custom-shader-animation = true`, which
   animates only the *focused* window. Open (and focus) another terminal and the
   treat pauses in the ones you're no longer looking at, so at most one window is
-  ever animating. Each treat is also deliberately cheap — a handful of texture
-  fetches (one for the pixel, a fixed dozen more to read back the background
-  colour, which the texture cache serves) and small, fixed per-frame work.
+  ever animating. Each treat is also deliberately cheap — a small, fixed number of
+  texture fetches (one for the pixel, plus a fixed set the texture cache serves to
+  read back the background colour) and small, fixed per-frame work.
 - **Non-destructive** — treats are namespaced under `shaders/spookiui/`, so any
   `custom-shader` you added yourself is preserved, and toggling follows the same
   validate → back up → write → reload → rollback discipline as every other edit.
